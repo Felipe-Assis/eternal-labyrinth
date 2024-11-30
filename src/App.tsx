@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Maze from "./components/Maze";
+import "./styles/App.css"; // Keep this for custom styling if needed
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <h1>Eternal Labyrinth</h1>
+          <p>Navigate through the maze. Can you find the way out?</p>
+        </header>
+        <main>
+          <Maze rows={25} cols={25} />
+        </main>
+        <footer>
+          <p>Created by Felipe Assis</p>
+        </footer>
+      </div>
   );
 }
 
