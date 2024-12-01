@@ -49,3 +49,23 @@ footer {
   margin-top: 20px;
   color: #555;
 }
+
+svg {
+  display: block;
+  margin: 20px auto; /* Centers the SVG */
+  border: 2px solid #333; /* Optional: Adds a border around the labyrinth */
+  background-color: #f8f9fa; /* Optional: Adds a light background for better visibility */
+  padding: 10px; /* Adds spacing inside the border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for better aesthetics */
+}
+
+body {
+  margin: 0; /* Removes default browser margins */
+  font-family: Arial, sans-serif; /* Ensures consistent font rendering */
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}

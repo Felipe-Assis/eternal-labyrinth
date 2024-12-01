@@ -1,0 +1,84 @@
+svg {
+    display: block;
+    margin: 20px auto; /* Centers the SVG */
+    border: 2px solid #333; /* Optional: Adds a border around the labyrinth */
+    background-color: #f8f9fa; /* Optional: Adds a light background for better visibility */
+    padding: 10px; /* Adds spacing inside the border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for better aesthetics */
+}
+
+body {
+    margin: 0; /* Removes default browser margins */
+    font-family: Arial, sans-serif; /* Ensures consistent font rendering */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+/*THEMES*/
+
+/* General styles for SVG background animations */
+@keyframes fog {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+@keyframes rippling {
+    0% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes stars {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Forest theme: Gentle drifting fog */
+.forest-background {
+    background: radial-gradient(circle, #e8f5e9, #a5d6a7);
+    animation: fog 10s linear infinite;
+    background-size: 300% 300%;
+}
+
+/* Volcano theme: Pulsating lava effect */
+.volcano-background {
+    background: radial-gradient(circle, #ffebee, #ffcccb);
+    animation: rippling 3s linear infinite;
+    background-size: 200% 200%;
+}
+
+/* Ocean theme: Subtle rippling water waves */
+.ocean-background {
+    background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+    background-size: 300% 300%;
+    animation: fog 15s linear infinite;
+}
+
+/* Mystic theme: Pulsing glowing lights */
+.mystic-background {
+    background: radial-gradient(circle at 50% 50%, #4a148c, #7e57c2);
+    animation: fog 20s ease-in-out infinite;
+    background-size: 400% 400%;
+}
+
+/* Space theme: Twinkling stars */
+.space-background {
+    background: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.space-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, white, transparent);
+    animation: stars 5s infinite linear;
+}

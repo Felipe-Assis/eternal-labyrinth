@@ -1,22 +1,26 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Maze from "./components/Maze";
-import "./styles/App.css"; // Keep this for custom styling if needed
+import EternalLabyrinthOmega from "./components/EternalLabyrinthOmega";
+import "./styles/App.css";
 
 function App() {
-  return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Eternal Labyrinth</h1>
-          <p>Navigate through the maze. Can you find the way out?</p>
-        </header>
-        <main>
-          <Maze rows={25} cols={25} />
-        </main>
-        <footer>
-          <p>Created by Felipe Assis</p>
-        </footer>
-      </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <header className="App-header">
+                    <h1>Eternal Labyrinth</h1>
+                    <nav>
+                        <Link to="/">Classic</Link> | <Link to="/omega">Omega</Link>
+                    </nav>
+                </header>
+                <Routes>
+                    <Route path="/" element={<Maze rows={20} cols={40} />} />
+                    <Route path="/omega" element={<EternalLabyrinthOmega rows={20} cols={40} />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

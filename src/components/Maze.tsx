@@ -3,10 +3,27 @@ import styled from "styled-components";
 import { generateMaze, Cell } from "../utils/mazeGenerator";
 import { usePlayerMovement } from "../hooks/usePlayerMovement";
 
-const MazeContainer = styled.div`
-  display: grid;
-  gap: 2px;
+const MazeWrapper = styled.div`
+  display: flex;
+  margin-top: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; /* Ensures full-page height */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for better visibility */
 `;
+
+const MazeContainer = styled.div`
+    display: grid;
+    gap: 2px;
+    margin: 0 auto; /* Center the maze horizontally */
+    padding: 10px; /* Add spacing inside the maze */
+    border: 2px solid #333; /* Add a border around the maze */
+    background-color: #fff; /* Ensure a clean white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better aesthetics */
+`;
+
 
 const CellStyled = styled.div<{ walls: Cell["walls"]; isPlayer?: boolean; isGoal?: boolean }>`
   width: 20px;
@@ -61,7 +78,6 @@ const Maze: React.FC<{ rows: number; cols: number }> = ({ rows, cols }) => {
         setGoal(randomGoal);
     }, [rows, cols]);
 
-
     // Check for win condition
     useEffect(() => {
         if (playerPosition.x === goal.x && playerPosition.y === goal.y) {
@@ -70,7 +86,8 @@ const Maze: React.FC<{ rows: number; cols: number }> = ({ rows, cols }) => {
     }, [playerPosition, goal]);
 
     return (
-        <>
+        <MazeWrapper>
+            <h1>Eternal Labyrinth</h1>
             <MazeContainer style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
                 {maze.flat().map((cell) => (
                     <CellStyled
@@ -82,8 +99,9 @@ const Maze: React.FC<{ rows: number; cols: number }> = ({ rows, cols }) => {
                 ))}
             </MazeContainer>
             {hasWon && <WinMessage>🎉 You Win! 🎉</WinMessage>}
-        </>
+        </MazeWrapper>
     );
 };
 
 export default Maze;
+
