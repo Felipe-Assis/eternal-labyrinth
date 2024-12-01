@@ -15,8 +15,8 @@ function App() {
                     </nav>
                 </header>
                 <Routes>
-                    <Route path="/" element={<Maze rows={20} cols={40} />} />
-                    <Route path="/omega" element={<EternalLabyrinthOmega rows={20} cols={40} />} />
+                    <Route path="/" element={<Maze rows={25} cols={45} />} />
+                    <Route path="/omega" element={<EternalLabyrinthOmega rows={25} cols={45} />} />
                 </Routes>
             </div>
         </Router>
