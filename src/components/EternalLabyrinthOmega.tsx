@@ -15,6 +15,12 @@ const themes : any = {
         playerColor: "#f44336",
         goalColor: "#ff5722",
     },
+    ocean: {
+        background: "#ebfeff",
+        wallColor: "#1c3bb7",
+        playerColor: "#36bbf4",
+        goalColor: "#2282ff",
+    },
 };
 
 const EternalLabyrinthOmega: React.FC<{ rows: number; cols: number }> = ({ rows, cols }) => {
@@ -133,6 +139,7 @@ const EternalLabyrinthOmega: React.FC<{ rows: number; cols: number }> = ({ rows,
                     <select value={theme} onChange={(e) => setTheme(e.target.value)}>
                         <option value="forest">Forest</option>
                         <option value="volcano">Volcano</option>
+                        <option value="ocean">Ocean</option>
                     </select>
                 </label>
             </div>
