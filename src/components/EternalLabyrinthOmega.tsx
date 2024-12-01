@@ -21,6 +21,12 @@ const themes : any = {
         playerColor: "#36bbf4",
         goalColor: "#2282ff",
     },
+    space: {
+        background: "#3f384f",
+        wallColor: "#866ec2",
+        playerColor: "#cad9e1",
+        goalColor: "#d1d6dc",
+    },
 };
 
 const EternalLabyrinthOmega: React.FC<{ rows: number; cols: number }> = ({ rows, cols }) => {
@@ -140,6 +146,7 @@ const EternalLabyrinthOmega: React.FC<{ rows: number; cols: number }> = ({ rows,
                         <option value="forest">Forest</option>
                         <option value="volcano">Volcano</option>
                         <option value="ocean">Ocean</option>
+                        <option value="space">Space</option>
                     </select>
                 </label>
             </div>
